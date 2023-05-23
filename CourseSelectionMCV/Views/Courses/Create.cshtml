@@ -1,0 +1,148 @@
+﻿@model CourseSelectionMCV.Models.Course
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseID" class="control-label"></label>
+                <input asp-for="CourseID" class="form-control" />
+                <span asp-validation-for="CourseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortName" class="control-label"></label>
+                <input asp-for="ShortName" class="form-control" />
+                <span asp-validation-for="ShortName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Introduction" class="control-label"></label>
+                <input asp-for="Introduction" class="form-control" />
+                <span asp-validation-for="Introduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Language" class="control-label"></label>
+                <input asp-for="Language" class="form-control" />
+                <span asp-validation-for="Language" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Credits" class="control-label"></label>
+                <input asp-for="Credits" class="form-control" />
+                <span asp-validation-for="Credits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hour" class="control-label"></label>
+                <input asp-for="Hour" class="form-control" />
+                <span asp-validation-for="Hour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="scheduleTimes">Schedule Times</label>
+                <div id="scheduleTimes">
+                    <input type="text" name="scheduleTimes" class="form-control schedule-time mb-3" />
+                </div>
+                <button type="button" id="addScheduleTime" class="btn btn-secondary">Add Schedule Time</button>
+            </div>
+
+            <div class="form-group">
+                <label for="teachers">Teachers</label>
+                <div id="teachers">
+                    <select name="teacherIds" class="form-control mb-3">
+                        <option value="">Select a teacher</option>
+                        @foreach (var teacher in (SelectList)ViewData["Teachers"])
+                        {
+                            <option value="@teacher.Value">@teacher.Text</option>
+                        }
+                    </select>
+                </div>
+                <button type="button" id="addTeacher" class="btn btn-secondary">Add Teacher</button>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Place" class="control-label"></label>
+                <input asp-for="Place" class="form-control" />
+                <span asp-validation-for="Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfPeople" class="control-label"></label>
+                <input asp-for="NumberOfPeople" class="form-control" />
+                <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxOfPeople" class="control-label"></label>
+                <input asp-for="MaxOfPeople" class="form-control" />
+                <span asp-validation-for="MaxOfPeople" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $("#addScheduleTime").on("click", function () {
+                var newScheduleTimeInput = $("<input>").attr("type", "text").attr("name", "scheduleTimes").addClass("form-control schedule-time");
+                var RemoveBtn = $("<button type='button' class='btn btn-danger remove-schedule-time'>Remove</button>")
+                var div = $("<div class = 'mb-3' style = 'display:flex;'>").append(newScheduleTimeInput, RemoveBtn)
+                $("#scheduleTimes").append(div);
+
+                RemoveBtn.on("click", function () {
+                    div.remove();
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#addTeacher").on("click", function () {
+                var newTeacherSelect = $("<select>").attr("name", "teacherIds").addClass("form-control mb-3");
+                newTeacherSelect.append('<option value="">Select a teacher</option>');
+                @foreach (var teacher in (SelectList)ViewData["Teachers"])
+                {
+                    <text>newTeacherSelect.append('<option value="@teacher.Value">@teacher.Text</option>'); </text>
+                }
+                var removeBtn = $("<button type='button' class='btn btn-danger remove-teacher'>Remove</button>");
+                var div = $("<div class='mb-3' style='display:flex;'>").append(newTeacherSelect, removeBtn);
+                $("#teachers").append(div);
+
+                removeBtn.on("click", function () {
+                    div.remove();
+                });
+            });
+        });
+    </script>
+}

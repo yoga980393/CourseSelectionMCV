@@ -1,0 +1,89 @@
+﻿@model CourseSelectionMCV.Models.GeneralCoursesWishlist
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GeneralCoursesWishlist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StudentID" class="control-label"></label>
+                <select asp-for="StudentID" class ="form-control" asp-items="ViewBag.StudentID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_1" class="control-label"></label>
+                <select asp-for="Choice_1" class ="form-control" asp-items="ViewBag.Choice_1">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_2" class="control-label"></label>
+                <select asp-for="Choice_2" class ="form-control" asp-items="ViewBag.Choice_2">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_3" class="control-label"></label>
+                <select asp-for="Choice_3" class ="form-control" asp-items="ViewBag.Choice_3">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_4" class="control-label"></label>
+                <select asp-for="Choice_4" class ="form-control" asp-items="ViewBag.Choice_4">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_5" class="control-label"></label>
+                <select asp-for="Choice_5" class ="form-control" asp-items="ViewBag.Choice_5">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_6" class="control-label"></label>
+                <select asp-for="Choice_6" class ="form-control" asp-items="ViewBag.Choice_6">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_7" class="control-label"></label>
+                <select asp-for="Choice_7" class ="form-control" asp-items="ViewBag.Choice_7">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_8" class="control-label"></label>
+                <select asp-for="Choice_8" class ="form-control" asp-items="ViewBag.Choice_8">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_9" class="control-label"></label>
+                <select asp-for="Choice_9" class ="form-control" asp-items="ViewBag.Choice_9">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice_10" class="control-label"></label>
+                <select asp-for="Choice_10" class ="form-control" asp-items="ViewBag.Choice_10">
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

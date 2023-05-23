@@ -1,0 +1,143 @@
+﻿@model IEnumerable<CourseSelectionMCV.Models.CreditRequirements>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>CreditRequirements</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequiredCredits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectiveMajor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectiveMinor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralHumanities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralSocialSciences)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralArts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralSciences)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralSelf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralBiomedical)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralDiversity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnglishCredits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhysicalTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhysicalRequired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhysicalFitness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhysicalSwimming)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MilitaryTraining)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCredits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredCredits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElectiveMajor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElectiveMinor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralHumanities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralSocialSciences)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralArts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralSciences)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralSelf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralBiomedical)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralDiversity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnglishCredits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhysicalTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhysicalRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhysicalFitness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhysicalSwimming)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MilitaryTraining)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCredits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

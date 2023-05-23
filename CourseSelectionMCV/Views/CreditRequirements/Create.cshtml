@@ -1,0 +1,119 @@
+﻿@model CourseSelectionMCV.Models.CreditRequirements
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CreditRequirements</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StudentID" class="control-label"></label>
+                <select asp-for="StudentID" class ="form-control" asp-items="ViewBag.StudentID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequiredCredits" class="control-label"></label>
+                <input asp-for="RequiredCredits" class="form-control" />
+                <span asp-validation-for="RequiredCredits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectiveMajor" class="control-label"></label>
+                <input asp-for="ElectiveMajor" class="form-control" />
+                <span asp-validation-for="ElectiveMajor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectiveMinor" class="control-label"></label>
+                <input asp-for="ElectiveMinor" class="form-control" />
+                <span asp-validation-for="ElectiveMinor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralHumanities" class="control-label"></label>
+                <input asp-for="GeneralHumanities" class="form-control" />
+                <span asp-validation-for="GeneralHumanities" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSocialSciences" class="control-label"></label>
+                <input asp-for="GeneralSocialSciences" class="form-control" />
+                <span asp-validation-for="GeneralSocialSciences" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralArts" class="control-label"></label>
+                <input asp-for="GeneralArts" class="form-control" />
+                <span asp-validation-for="GeneralArts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSciences" class="control-label"></label>
+                <input asp-for="GeneralSciences" class="form-control" />
+                <span asp-validation-for="GeneralSciences" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSelf" class="control-label"></label>
+                <input asp-for="GeneralSelf" class="form-control" />
+                <span asp-validation-for="GeneralSelf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralBiomedical" class="control-label"></label>
+                <input asp-for="GeneralBiomedical" class="form-control" />
+                <span asp-validation-for="GeneralBiomedical" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralDiversity" class="control-label"></label>
+                <input asp-for="GeneralDiversity" class="form-control" />
+                <span asp-validation-for="GeneralDiversity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralTotal" class="control-label"></label>
+                <input asp-for="GeneralTotal" class="form-control" />
+                <span asp-validation-for="GeneralTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnglishCredits" class="control-label"></label>
+                <input asp-for="EnglishCredits" class="form-control" />
+                <span asp-validation-for="EnglishCredits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhysicalTotal" class="control-label"></label>
+                <input asp-for="PhysicalTotal" class="form-control" />
+                <span asp-validation-for="PhysicalTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhysicalRequired" class="control-label"></label>
+                <input asp-for="PhysicalRequired" class="form-control" />
+                <span asp-validation-for="PhysicalRequired" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PhysicalFitness" /> @Html.DisplayNameFor(model => model.PhysicalFitness)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PhysicalSwimming" /> @Html.DisplayNameFor(model => model.PhysicalSwimming)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MilitaryTraining" class="control-label"></label>
+                <input asp-for="MilitaryTraining" class="form-control" />
+                <span asp-validation-for="MilitaryTraining" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalCredits" class="control-label"></label>
+                <input asp-for="TotalCredits" class="form-control" />
+                <span asp-validation-for="TotalCredits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
