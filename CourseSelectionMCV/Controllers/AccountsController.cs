@@ -59,6 +59,7 @@ namespace CourseSelectionMCV.Controllers
                 teacher = c.CourseTeachers.Select(ct => ct.Teacher.TeacherName).ToList()
             }).ToList();
 
+
             return Ok(result);
         }
 
